@@ -203,11 +203,11 @@ Couldn't find env: 'AMBIENT_CHANNEL_ID'
 
 Ambientアカウントにログイン後、「Myチャネル」-> 「チャネルを作る」ボタンからチャネルを新規作成します。
 
-![channel-creation](images/channel-creation)
+![channel-creation](images/channel-creation.png)
 
 作成したチャネル情報の中から、データを保存するために「チャネルID」と「ライトキー」を後ほど使います。
 
-![channel-details](images/channel-details)
+![channel-details](images/channel-details.png)
 
 
 ### 環境変数の追加 (チャンネルID、ライトキー)
