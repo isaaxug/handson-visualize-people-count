@@ -241,7 +241,49 @@ Ambientアカウントにログイン後、「Myチャネル」-> 「チャネ�
 ![ambient-graph](images/ambient-graph.png)
 
 
-## 課題
+## 時間に余裕がある方は...
+
+下記課題に取り組んでみましょう。
+
+### 課題 1
+
+今回人を認識するために使っている学習モデルは、人を含めて16種類のオブジェクトを認識することができます。サンプルコード上では68行目付近のコードがオブジェクトの種類を判断しています。IDが15のオブジェクトが人のため、人以外の物体だった場合は次のループに移行するようにしています。
+
+```python
+# それぞれのオブジェクトにはidが割り振られています。今回の学習モデルでは
+# 下記の順番で0から20のクラスが存在します。
+# "background", "aeroplane", "bicycle", "bird", "boat",
+#	"bottle", "bus", "car", "cat", "chair", "cow", "diningtable",
+#	"dog", "horse", "motorbike", "person", "pottedplant", "sheep",
+#	"sofa", "train", "tvmonitor"
+idx = int(detections[0, 0, i, 1])
+if idx != 15:
+    continue
+```
+
+また、フレームに描画される'Person'の表示は、74行目付近の`Label`変数が指定しています。
+
+```python
+label = '{}: {:.2f}%'.format('Person', confidence * 100)
+```
+
+上記のクラスの中から、好きなオブジェクトを描画するように処理を変更してみましょう。
+
+
+### 課題 2
+
+課題1で認識させた人以外のオブジェクトもカウントし、Ambientで可視化するように変更しましょう。`request`関数の`am.send`に渡す引数を変えることで簡単に実現できます。例えば人のほかに犬のカウントも行った場合、下記のように変更します。
+
+```python
+am.send({
+    'created': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+    'd1': person_count,
+    'd2': dog_count,
+})
+```
+
+[Ambient Pythonライブラリ - 公式ドキュメント](https://ambidata.io/refs/python/)
+
 
 ## 付録 SDカードのセットアップ
 
