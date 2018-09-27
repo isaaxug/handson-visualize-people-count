@@ -186,6 +186,10 @@ if count > 0:
         self.last_upload = time.time()
 ```
 
+編集は以上です。最終的なコードの全体像は下記のリンクから確認してください。
+
+[サンプルコード - GitHub](https://github.com/isaaxug/study-picamera-examples/blob/answer-0927/camera/processor/person_detector.py)
+
 変更を終えたら、コミットを作成してリモートリポジトリに反映します。GitHub上で編集した場合はページ下部の「Commit changes」ボタンからコミットを作成できます。リモートリポジトリに変更があると、isaaxは更新通知を受け取り、自動的に先ほど登録したデバイスに対して最新のアプリケーションを配信します。
 
 isaaxのダッシュボードからログを確認してみましょう。下記のようなエラーが表示されるはずです。
