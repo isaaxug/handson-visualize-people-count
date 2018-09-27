@@ -253,9 +253,9 @@ Ambientアカウントにログイン後、「Myチャネル」-> 「チャネ�
 # それぞれのオブジェクトにはidが割り振られています。今回の学習モデルでは
 # 下記の順番で0から20のクラスが存在します。
 # "background", "aeroplane", "bicycle", "bird", "boat",
-#	"bottle", "bus", "car", "cat", "chair", "cow", "diningtable",
-#	"dog", "horse", "motorbike", "person", "pottedplant", "sheep",
-#	"sofa", "train", "tvmonitor"
+# "bottle", "bus", "car", "cat", "chair", "cow", "diningtable",
+# "dog", "horse", "motorbike", "person", "pottedplant", "sheep",
+# "sofa", "train", "tvmonitor"
 idx = int(detections[0, 0, i, 1])
 if idx != 15:
     continue
